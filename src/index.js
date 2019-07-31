@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom";
+import WithDebounce from "./WithDebounce";
+import NoDebounce from "./NoDebounce";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => (
+  <Fragment>
+    <WithDebounce />
+    <NoDebounce />
+  </Fragment>
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+document.body.innerHTML = "<div id='root'></div>";
+
+ReactDOM.render(<App />, document.getElementById("root"));
